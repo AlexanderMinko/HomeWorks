@@ -10,7 +10,6 @@ public class FileDemo2 {
 		
 		for(File file:folder.listFiles()) {
 			System.out.println(file.getName());
-		}
-		
+		}		
 	}
 }
