@@ -1,0 +1,18 @@
+#Показывает количесвто туров пользователя под определенным ID
+USE diplomadb;
+SELECT user_name as name, user_surname as surname, COUNT(Country1) as tours
+FROM users u
+JOIN users_tours ut ON
+ut.User1 = u.userID
+GROUP BY u.userID
+HAVING u.userID = 3;
+
+#Выбирает все туры конктретного пользователя
+USE diplomadb;
+SELECT users.user_name, users.user_surname, tours.country as tour
+FROM users
+JOIN users_tours
+ON users_tours.User1 = users.UserID
+JOIN tours
+ON users_tours.Country1 = tours.tourID
+WHERE users.UserID = 2;
